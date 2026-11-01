@@ -53,14 +53,14 @@ async function fetchPlayerCount() {
         const res = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}`);
         const data = await res.json();
         if (data.online) {
-            el.textContent = `当前在线: ${data.players.online} / ${data.players.max}`;
+            el.textContent = ``;
         } else {
-            el.textContent = '服务器暂时离线 💤';
+            el.textContent = '';
             document.querySelector('.status-dot').style.background = '#f87171';
             document.querySelector('.status-dot').style.boxShadow = '0 0 8px #f87171';
         }
     } catch {
-        el.textContent = '在线人数获取失败';
+        el.textContent = '';
     }
 }
 fetchPlayerCount();
