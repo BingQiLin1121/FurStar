@@ -90,6 +90,13 @@ body {
 .online-status { display: flex; align-items: center; justify-content: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; }
 
+/* ===== 新增：Hero区域下载按钮 ===== */
+.hero-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
 /* ===== 特色卡片 ===== */
 .features, .join-section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
 .section-title {
@@ -112,6 +119,7 @@ body {
 .step {
     background: var(--bg-card); border-radius: 16px; padding: 2rem; text-align: center;
     flex: 1; min-width: 220px; max-width: 300px; border: 1px solid rgba(255,255,255,0.06);
+    display: flex; flex-direction: column; align-items: center;
 }
 .step-num {
     width: 40px; height: 40px; border-radius: 50%; background: var(--accent);
@@ -131,6 +139,12 @@ body {
 .btn-primary:hover { background: #8b6cf5; box-shadow: var(--glow); }
 .btn-outline { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
 .btn-outline:hover { background: var(--accent); color: #fff; }
+
+/* 新增：大按钮样式 */
+.btn-large {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+}
 
 /* ===== 页脚 ===== */
 footer {
