@@ -22,51 +22,29 @@ window.addEventListener('resize', () => {
     createStars();
 });
 
-// ===== 2. 一键复制IP =====
-const ipBox = document.getElementById('ipBox');
-const toast = document.getElementById('copyToast');
-const SERVER_IP = '请到QQ群里获取'; // ← 修改为你的真实IP
+// ===== 2. 模拟在线人数（替换为真实API） =====
+const SERVER_IP = 'play.rongxing.com'; // <- 修改为你的真实IP
 
-ipBox.addEventListener('click', async () => {
-    try {
-        await navigator.clipboard.writeText(SERVER_IP);
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
-    } catch {
-        // 降级方案
-        const ta = document.createElement('textarea');
-        ta.value = SERVER_IP;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 2000);
-    }
-});
-
-// ===== 3. 模拟在线人数（替换为真实API） =====
 async function fetchPlayerCount() {
     const el = document.getElementById('playerCount');
     try {
-        // 使用 mcsrvstat.us 免费API，替换为你的真实IP
         const res = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}`);
         const data = await res.json();
         if (data.online) {
-            el.textContent = ``;
+            el.textContent = `当前在线: ${data.players.online} / ${data.players.max}`;
         } else {
-            el.textContent = '';
+            el.textContent = '服务器暂时离线';
             document.querySelector('.status-dot').style.background = '#f87171';
             document.querySelector('.status-dot').style.boxShadow = '0 0 8px #f87171';
         }
     } catch {
-        el.textContent = '';
+        el.textContent = '在线人数获取失败';
     }
 }
 fetchPlayerCount();
 setInterval(fetchPlayerCount, 60000); // 每分钟刷新
 
-// ===== 4. 移动端菜单 =====
+// ===== 3. 移动端菜单 =====
 document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
     const nav = document.querySelector('.nav-links');
     nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
@@ -80,7 +58,7 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
     nav.style.backdropFilter = 'blur(10px)';
 });
 
-// ===== 5. 滚动渐入动画 =====
+// ===== 4. 滚动渐入动画 =====
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -90,7 +68,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.card, .step').forEach(el => {
+document.querySelectorAll('.card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s, transform 0.6s';
