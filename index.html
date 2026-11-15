@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- 星空背景容器 -->
+    <!-- 星空背景 -->
     <div id="star-container"></div>
 
     <!-- 导航栏 -->
@@ -17,30 +17,33 @@
         <ul class="nav-links">
             <li><a href="#home">首页</a></li>
             <li><a href="#features">特色玩法</a></li>
-            <li><a href="#community">社区</a></li>
+            <li><a href="#team">管理团队</a></li>
         </ul>
         <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- 首屏 Hero 区域 -->
+    <!-- 首屏 Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="glow-text">绒星梦境<br>Minecraft 服务器</h1>
-            <p class="subtitle">一个j基互通 · 原版生存 的Minecraft 服务器</p>
+            <p class="subtitle">一个多种玩法 · 原版生存 的Minecraft 服务器</p>
             
-            <!-- 服务器QQ群按钮 -->
-            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=DGGfUjlqcc968ijhElQ-cKp0cOaPeTr-&authKey=lypDchcVzLvc7jAGZpNFlT5Ec1DG4ME7mFSBkBGU6LqPYAgnc7yE6m80hpqDGhTN&noverify=0&group_code=946147296" target="_blank" class="ip-box" style="text-decoration: none;">
-                <span class="ip-label"></span>
-                <span class="ip-address">服务器QQ群</span>
+            <!-- QQ群按钮 -->
+            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=DGGfUjlqcc968ijhElQ-cKp0cOaPeTr-&authKey=lypDchcVzLvc7jAGZpNFlT5Ec1DG4ME7mFSBkBGU6LqPYAgnc7yE6m80hpqDGhTN&noverify=0&group_code=946147296" 
+               target="_blank" class="ip-box" style="text-decoration: none;">
+                <span class="ip-label">let's GO!</span>
+                <span class="ip-address">跳转QQ群</span>
                 <i class="fas fa-external-link-alt copy-icon"></i>
             </a>
 
-            <!-- 下载启动器按钮 -->
-            <a href="https://pan.huang1111.cn/s/mxA7BF1" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem; font-size: 1.1rem; padding: 0.9rem 2.5rem;">
-                <i class="fas fa-download"></i> 下载启动器
-            </a>
+            <!-- 下载启动器 -->
+            <div style="margin-top: 1.5rem;">
+                <a href="https://pan.huang1111.cn/s/mxA7BF1" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2.5rem;">
+                    <i class="fas fa-download"></i> 下载启动器
+                </a>
+            </div>
 
-            <div class="online-status">
+            <div class="online-status" style="margin-top: 1.5rem;">
                 <span class="status-dot"></span>
                 <span id="playerCount"></span>
             </div>
@@ -69,16 +72,51 @@
         </div>
     </section>
 
+    <!-- 管理团队 (新增) -->
+    <section id="team" class="features">
+        <h2 class="section-title">👑 管理团队</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="avatar-placeholder"><i class="fas fa-crown"></i></div>
+                <h3>绒星服主</h3>
+                <p class="role-tag">冰奇林</p>
+                <p>负责服务器规划与重大决策。</p>
+            </div>
+            <div class="card">
+                <div class="avatar-placeholder"><i class="fas fa-shield-alt"></i></div>
+                <h3>绒星管理员</h3>
+                <p class="role-tag">006</p>
+                <p>维护社区秩序，处理玩家反馈与违规举报。</p>
+            </div>
+            <div class="card">
+                <div class="avatar-placeholder"><i class="fas fa-code"></i></div>
+                <h3>紫水晶服主</h3>
+                <p class="role-tag">333</p>
+                <p>负责紫水晶服务器规划与重大决策，维护绒星服务器秩序。</p>
+            </div>
+            <div class="card">
+                <div class="avatar-placeholder"><i class="fas fa-paint-brush"></i></div>
+                <h3>十字架服主</h3>
+                <p class="role-tag">阿wswyz七</p>
+                <p>负责十字架服务器规划与重大决策，维护绒星服务器秩序。</p>
+            </div>
+        </div>
+    </section>
+
     <!-- 页脚 -->
     <footer id="community">
         <div class="footer-content">
             <div class="footer-brand">
                 <h3><i class="fas fa-star"></i> 绒星梦境</h3>
-                <p>hello wrold。</p>
+                <p>Hello World。</p>
             </div>
             <div class="footer-links">
-                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=DGGfUjlqcc968ijhElQ-cKp0cOaPeTr-&authKey=lypDchcVzLvc7jAGZpNFlT5Ec1DG4ME7mFSBkBGU6LqPYAgnc7yE6m80hpqDGhTN&noverify=0&group_code=946147296" target="_blank"><i class="fab fa-qq"></i> QQ群: 946147296</a>
-                <a href="https://space.bilibili.com/3546579409570322?spm_id_from=333.1387.fans.user_card.click" target="_blank"><i class="fab fa-bilibili"></i> B站主页</a>
+                <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=DGGfUjlqcc968ijhElQ-cKp0cOaPeTr-&authKey=lypDchcVzLvc7jAGZpNFlT5Ec1DG4ME7mFSBkBGU6LqPYAgnc7yE6m80hpqDGhTN&noverify=0&group_code=946147296" target="_blank">
+                    <i class="fab fa-qq"></i> 服务器QQ群
+                </a>
+                <a href="https://space.bilibili.com/3546579409570322?spm_id_from=333.1387.fans.user_card.click" target="_blank">
+                    <i class="fab fa-bilibili"></i> B站主页
+                </a>
             </div>
         </div>
         <div class="copyright">
