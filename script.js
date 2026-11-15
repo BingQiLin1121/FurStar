@@ -1,6 +1,8 @@
-// ===== 1. 生成星空背景 =====
+// ===== 1. 生成星空 =====
 function createStars() {
     const container = document.getElementById('star-container');
+    if (!container) return;
+    container.innerHTML = ''; // 清空防止重复
     const starCount = Math.floor(window.innerWidth * window.innerHeight / 3000);
     
     for (let i = 0; i < starCount; i++) {
@@ -17,26 +19,27 @@ function createStars() {
     }
 }
 createStars();
-window.addEventListener('resize', () => {
-    document.getElementById('star-container').innerHTML = '';
-    createStars();
-});
-
-// ===== 2. 模拟在线人数（替换为真实API） =====
+window.addEventListener('resize', createStars);
 
 // ===== 3. 移动端菜单 =====
-document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
-    const nav = document.querySelector('.nav-links');
-    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    nav.style.flexDirection = 'column';
-    nav.style.position = 'absolute';
-    nav.style.top = '60px';
-    nav.style.right = '5%';
-    nav.style.background = 'rgba(10,14,26,0.95)';
-    nav.style.padding = '1.5rem';
-    nav.style.borderRadius = '12px';
-    nav.style.backdropFilter = 'blur(10px)';
-});
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+        const isVisible = navLinks.style.display === 'flex';
+        navLinks.style.display = isVisible ? 'none' : 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '60px';
+        navLinks.style.right = '5%';
+        navLinks.style.background = 'rgba(10,14,26,0.95)';
+        navLinks.style.padding = '1.5rem';
+        navLinks.style.borderRadius = '12px';
+        navLinks.style.backdropFilter = 'blur(10px)';
+        navLinks.style.gap = '1rem';
+    });
+}
 
 // ===== 4. 滚动渐入动画 =====
 const observer = new IntersectionObserver((entries) => {
