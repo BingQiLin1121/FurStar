@@ -23,26 +23,6 @@ window.addEventListener('resize', () => {
 });
 
 // ===== 2. 模拟在线人数（替换为真实API） =====
-const SERVER_IP = 'xm.rainplay.cn:22200'; // <- 修改为你的真实IP
-
-async function fetchPlayerCount() {
-    const el = document.getElementById('playerCount');
-    try {
-        const res = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}`);
-        const data = await res.json();
-        if (data.online) {
-            el.textContent = ``;
-        } else {
-            el.textContent = '';
-            document.querySelector('.status-dot').style.background = '#f87171';
-            document.querySelector('.status-dot').style.boxShadow = '0 0 8px #f87171';
-        }
-    } catch {
-        el.textContent = '';
-    }
-}
-fetchPlayerCount();
-setInterval(fetchPlayerCount, 60000); // 每分钟刷新
 
 // ===== 3. 移动端菜单 =====
 document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
